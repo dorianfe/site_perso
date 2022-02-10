@@ -15,6 +15,15 @@
 </head>
 <body>
     <p>base layout</p>
-    {% block body %}{% endblock %}
+    <main role="main">
+        {% block body %}{% endblock %}
+
+    </main>
+    <footer>
+        <p>
+            &copy; {{ 'now'|date('Y') }}
+            &middot; <a href="{{ path('app_about')}}">About Us</a>
+        </p>
+    </footer>
 </body>
 </html>
