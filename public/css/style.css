@@ -1,9 +1,51 @@
-h1 {
-	text-decoration: none;
-	color: rgb(61, 146, 201);
+html {
+	background-color: rgb(212, 198, 170);
 }
 
-.wrapper {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+/* mise en forme des éléments de base */
+/* --------------------------------------------------------------------------------------------- */
+
+body {
+	font: 1em/150% Helvetica, Arial, sans-serif;
+	padding: 1em;
+	margin: 0 auto;
 }
+
+@media (min-width: 70em) {
+  /* On donne un traitement conditionnel de la taille de police globale.
+     sur de grands écrans, on augmente la valeur de font-size pour une
+     meilleure lisibilité */
+     body {
+     	font-size: 130%;
+     }
+   }
+
+   h1 {
+   	font-size: 1.5em;
+   	color: #2B3955;
+   	font-family: Georgia, 'Times New Roman', Times, serif;
+   	border-bottom: 1px solid #375e97;
+
+   }
+
+   h2 {
+   	font-size: 1.5em;
+   }
+
+   .job-title {
+   	color: #999999;
+   	font-weight: bold;
+   }
+
+   .wrapper {
+   	display: grid;
+   	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+   }
+
+   a:link, a:visited {
+   	color: #fb6542;
+   }
+
+   a:hover {
+   	text-decoration: none;
+   }
