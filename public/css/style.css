@@ -1,0 +1,9 @@
+h1 {
+	text-decoration: none;
+	color: rgb(61, 146, 201);
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
