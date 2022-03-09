@@ -1,11 +1,14 @@
-
+.h1 {
+  display: flex;
+  justify-content: center;
+}
 
 .container{
   flex-wrap: wrap;
   position: relative;
   display: flex;
   justify-content: space-around;
-  
+
   margin: 15px auto;
 }
 
