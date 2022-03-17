@@ -15,19 +15,22 @@
     {% endblock %}
 </head>
 <body>
+    <header>
 
-    <main>
-        <h1>Dorian</h1>
+        <h1>Dorian Fenestre</h1>
+        <H2>Développeur Web PHP Symfony</h2>
+       
+    </header>
 
-        <div class="job">Développeur Web PHP Symfony</div>
-        {% block body %}{% endblock %}
-    </main>
-    
-    <footer>
-        <p>
-            &copy; {{ 'now'|date('Y') }}
-            &middot; <a href="{{ path('app_about') }}">About Us</a>
-        </p>
-    </footer>
-</body>
-</html>
+        <main>
+            {% block body %}{% endblock %}
+        </main>
+
+        <footer>
+            <p>
+                &copy; {{ 'now'|date('Y') }}
+                &middot; <a href="{{ path('app_about') }}">A propos</a>
+            </p>
+        </footer>
+    </body>
+    </html>
