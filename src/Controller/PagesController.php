@@ -20,5 +20,11 @@ class PagesController extends AbstractController
         return $this->render('pages/about.html.twig');
     }
 
+    #[Route('/projets', name: 'app_projets')]
+    public function projets(): Response
+    {
+        return $this->render('pages/projets.html.twig');
+    }
+
 
 }
