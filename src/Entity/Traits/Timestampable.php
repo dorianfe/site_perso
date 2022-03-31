@@ -2,6 +2,14 @@
 
 namespace App\Entity\Traits;
 
+use App\Repository\PinRepository;
+use Doctrine\ORM\Mapping as ORM;
+use App\Entity\Traits\Timestampable;
+
+#[ORM\Entity(repositoryClass: PinRepository::class)]
+#[ORM\Table(name: "pins")]
+#[ORM\HasLifecycleCallbacks]
+
 trait Timestampable
 {
 	#[ORM\Column(
