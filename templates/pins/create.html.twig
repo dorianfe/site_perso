@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+{{ include('nav/navbar.html.twig') }}
+
+<h1>New pin</h1>
+
+{{ form_start(form) }}
+{{ form_widget(form) }}
+<input type="submit" value="Create Pin">
+{{ form_end(form) }}
+
+{% endblock %}

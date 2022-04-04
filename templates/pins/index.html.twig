@@ -2,6 +2,7 @@
 
 
 {% block body %}
+{{ include('nav/navbar.html.twig') }}
 <h1>{{ pluralize(pins|length, 'Pin') }}</h1>
 
 {% for pin in pins %}
