@@ -8,10 +8,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\HiddenType;
-use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Routing\RouteCollection;
 use Doctrine\ORM\EntityManagerInterface;
+use App\Form\PinType;
 
 class PinsController extends AbstractController
 {
@@ -35,14 +34,12 @@ class PinsController extends AbstractController
     {
         $pin = new Pin;
 
-        $form = $this->createFormBuilder($pin)
-        ->add('title', TextType::class)
-        ->add('description', TextareaType::class)
-        ->getForm();
+        $form = $this->createForm(PinType::class, $pin);
 
         $form->handleRequest($request);
 
-        if($form->isSubmitted() && $form->isValid()) {
+        if($form->isSubmitted() && $form->isValid()) 
+        {
             //$pin = $form->getData(); either getData or $pin
             // In place of creating a new pin a Pin Oject can be injected in createFormBuilder(new Pin) or $pin with attribute set to null
             //$pin = new Pin;
@@ -60,13 +57,12 @@ class PinsController extends AbstractController
     }
 
 
-    #[Route('/pins/{id<[0-9]+>}/edit', name: 'app_pins_edit', methods: ['GET', 'POST'])]
+    #[Route('/pins/{id<[0-9]+>}/edit', name: 'app_pins_edit', methods: ['GET', 'PUT'])]
     public function edit(Request $request, Pin $pin, EntityManagerInterface $em): Response
     {
-        $form = $this->createFormBuilder($pin)
-        ->add('title', TextType::class)
-        ->add('description', TextareaType::class)
-        ->getForm();
+        $form = $this->createForm(PinType::class, $pin, [
+            'method' => 'PUT'
+        ]);
 
         $form->handleRequest($request);
 
