@@ -5,9 +5,6 @@
 
 <h1>Modifier le pin #{{ pin.id }}</h1>
 
-{{ form_start(form) }}
-{{ form_widget(form) }}
-<input type="submit" value="Modifier le Pin">
-{{ form_end(form) }}
+{{ include('pins/_form.html.twig', {'submitButtonText': 'modifier'}) }}
 
 {% endblock %}
