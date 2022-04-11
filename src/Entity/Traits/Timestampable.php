@@ -48,7 +48,7 @@ trait Timestampable
         return $this;
     }
 
-    #[ORM\PrePersist]
+    #[ORM\PrePersist]  
     #[ORM\PreUpdate]
     public function updateTimestamps()
     {

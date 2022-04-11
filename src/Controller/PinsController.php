@@ -40,13 +40,11 @@ class PinsController extends AbstractController
 
         if($form->isSubmitted() && $form->isValid()) 
         {
-            //$pin = $form->getData(); either getData or $pin
-            // In place of creating a new pin a Pin Oject can be injected in createFormBuilder(new Pin) or $pin with attribute set to null
-            //$pin = new Pin;
-            //$pin->setTitle($data['title']);
-            //$pin->setDescription($data['description']);
+
             $em->persist($pin);
             $em->flush();
+
+            $this->addFlash('success', 'Le Pin a bien été créé.');
 
             return $this->redirectToRoute('app_pins');
         }
@@ -70,6 +68,9 @@ class PinsController extends AbstractController
 
             $em->flush();
 
+            $this->addFlash('success', 'Le Pin a bien été mis à jour.');
+
+
             return $this->redirectToRoute('app_pins');
         }
 
@@ -84,10 +85,13 @@ class PinsController extends AbstractController
     public function delete(Request $request, Pin $pin, EntityManagerInterface $em): Response
     {
 
-        if($this->isCsrfTokenValid('pin_deletion_'.$pin->getId(), $request->request->get('csrf_token'))) {
+        if($this->isCsrfTokenValid('pin_deletion_' . $pin->getId(), $request->request->get('csrf_token'))) {
 
             $em->remove($pin);
             $em->flush();
+
+            $this->addFlash('info', 'Le Pin a bien été supprimé.');
+
         }
         
 

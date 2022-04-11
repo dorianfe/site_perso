@@ -47,6 +47,26 @@ footer {
     align-items: flex-end;
 }
 
+.flash {
+    display: flex;
+    padding: 10px;
+    color: white;
+    justify-content: center;
+    text-align: center;
+}
+
+.flash-success {
+    background-color: green;
+}
+
+.flash-info {
+    background-color: royalblue;
+}
+
+.flash-error {
+    background-color: darkred;
+}
+
 
 
 /*-------------------- CSS for Cards ----------------- */
