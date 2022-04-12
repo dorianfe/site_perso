@@ -3,6 +3,8 @@
 
 {% block body %}
 {{ include('nav/navbar.html.twig') }}
+{{ include('pins/_title_pins_app') }}
+<p>Un pinterest-like</p>
 <h1>{{ pluralize(pins|length, 'Pin') }}</h1>
 
 {% for pin in pins %}

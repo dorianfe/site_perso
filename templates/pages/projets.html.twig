@@ -3,7 +3,10 @@
 {% block title 'Projets | ' ~ parent() %}  
 
 {% block body %}
-<h1>Projets <span class="heart">&hearts;</span> </h1>
-<p><a href="{{ path('app_home') }}">Retour à la page d'accueil</p>
+<div class="projets">
+	<h1>Projets <span class="heart">&hearts;</span> </h1>
+	<p><a href="{{ path('app_pins') }}">Epintérêt</a></p>
+	<p><a href="{{ path('app_home') }}">Retour à la page d'accueil</p>
+</div>
 	{% endblock %}
 

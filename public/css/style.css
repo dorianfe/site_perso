@@ -67,6 +67,15 @@ footer {
     background-color: darkred;
 }
 
+.nav {
+    display: flex;
+  }
+
+  .projets {
+   
+    
+  }
+
 
 
 /*-------------------- CSS for Cards ----------------- */
