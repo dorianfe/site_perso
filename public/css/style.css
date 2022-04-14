@@ -11,6 +11,7 @@ html {
 article, header, section, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
     display: block;
 }
+
 body {
     background:#fff none repeat scroll 0 0;
     color: #222;
@@ -20,24 +21,26 @@ body {
     padding:0;
     font-family: "Raleway",sans-serif;
 }
+
 a{
     font-family: "Raleway",sans-serif;
     text-decoration: none;
     outline: none;
 }
+
 a:hover, a:focus {
     color: #373e18;
 }
 
 header {
- float: left;
- width: 100%;
- padding: 2em 0;
- margin: 0 auto;
- text-align:center;
- background: #fff none repeat scroll 0 0;
- font-weight: 700;
- line-height: normal;
+   float: left;
+   width: 100%;
+   padding: 2em 0;
+   margin: 0 auto;
+   text-align:center;
+   background: #fff none repeat scroll 0 0;
+   font-weight: 700;
+   line-height: normal;
 }
 
 footer {
@@ -67,14 +70,11 @@ footer {
     background-color: darkred;
 }
 
-.nav {
-    display: flex;
-  }
 
-  .projets {
-   
-    
-  }
+.projets {
+
+
+}
 
 
 
