@@ -1,10 +1,16 @@
-{% extends 'base.html.twig' %}
+{% extends 'pins/layout_pins_app.html.twig' %}
 
 {% block body %}
-{{ include('nav/navbar.html.twig') }}
 
-<h1>Modifier le pin #{{ pin.id }}</h1>
+	<div class="row">
+		<div class="col-md-6 mx-auto">
+			{{ include('pins/nav/navbar.html.twig') }}
 
-{{ include('pins/_form.html.twig', {'submitButtonText': 'modifier'}) }}
+			<h1>Modifier le pin #{{ pin.id }}</h1>
+
+			{{ include('pins/partials/_form.html.twig', {'submitButtonText': 'modifier'})}}
+		</div>
+	</div>
+	
 
 {% endblock %}

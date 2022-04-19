@@ -1,9 +1,11 @@
-{% extends 'base.html.twig' %}
+{% extends 'pins/layout_pins_app.html.twig' %}
 
 {% block body %}
-{{ include('nav/navbar.html.twig') }}
+	<div class="row">
+		<div class="col-md-6 mx-auto">
+			<h1>Nouveau pin</h1>
+			{{ include('pins/partials/_form.html.twig') }}
 
-<h1>New pin</h1>
-
-{{ include('pins/_form.html.twig') }}
+		</div>
+	</div>
 {% endblock %}

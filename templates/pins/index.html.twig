@@ -1,9 +1,8 @@
-{% extends 'base.html.twig' %}
+{% extends 'pins/layout_pins_app.html.twig' %}
 
 
 {% block body %}
-{{ include('nav/navbar.html.twig') }}
-{{ include('pins/_title_pins_app') }}
+{{ include('pins/partials/_title_pins_app.html.twig') }}
 <p>Un pinterest-like</p>
 <h1>{{ pluralize(pins|length, 'Pin') }}</h1>
 
