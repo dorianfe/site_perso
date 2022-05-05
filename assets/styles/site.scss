@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,900');
 
 html {
@@ -50,25 +49,33 @@ footer {
     align-items: flex-end;
 }
 
-.flash {
-    display: flex;
-    padding: 10px;
-    color: white;
-    justify-content: center;
-    text-align: center;
+.alert {
+  
+  padding: 10px;
+  color: white;
+  text-align: center;
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  &.alert-success {
+      background-color: green;
+  }
+  &.alert-success {
+      background-color: green;
+  }
+  &.alert-info {
+      background-color: royalblue;
+  }
+  &.alert-error {
+      background-color: darkred;
+}
 }
 
-.flash-success {
-    background-color: green;
-}
 
-.flash-info {
-    background-color: royalblue;
-}
 
-.flash-error {
-    background-color: darkred;
-}
+
+
+
 
 
 .projets {
