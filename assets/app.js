@@ -10,5 +10,7 @@ import './styles/app.scss';
 
 import './bootstrap';
 
+import $ from 'jquery';
+
 // start the Stimulus application
 
