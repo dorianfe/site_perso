@@ -7,8 +7,8 @@
 body {
 	font-family: $primary-font, sans-serif;
 }
- .alert {
-  
+.alert {
+
   padding: 10px;
   color: white;
   text-align: center;
@@ -16,15 +16,30 @@ body {
   border: none;
   border-radius: 0;
   &.alert-success {
-      background-color: green;
+    background-color: green;
   }
   &.alert-success {
-      background-color: green;
+    background-color: green;
   }
   &.alert-info {
-      background-color: royalblue;
+    background-color: royalblue;
   }
   &.alert-error {
-      background-color: darkred;
+    background-color: darkred;
+  }
 }
+
+
+.vich-image {
+  .form-check {
+    @extend .mt-3;
+  }
+
+  img {
+    @extend .mb-2;
+    @extend .rounded;
+    @extend .shadow;
+    @extend .img-thumbnail;
+  }
 }
+
