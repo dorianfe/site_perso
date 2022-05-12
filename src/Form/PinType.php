@@ -22,6 +22,7 @@ class PinType extends AbstractType
             'delete_label' => 'Supprimer ?',
             'download_label' => 'Telécharger',
             'download_uri' => true,
+            'imagine_pattern' => 'square_thumbnail_sm',
             'image_uri' => true,
             'asset_helper' => true,
         ])
