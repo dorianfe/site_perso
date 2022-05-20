@@ -3,17 +3,32 @@
 
 {% block body %}
 
-<article>
-	<h1>{{ pin.title }}</h1>
-	<p>{{ pin.description }}</p>
-</article>
 
-<a href="{{ path('app_pins_edit', {id: pin.id}) }}">Modifier un pin</a> |
-<a href="#" onclick="event.preventDefault(); confirm('Êtes-vous sûr ?') && document.getElementById('js-pin-delete-form').submit();">Supprimer</a> |
+	<div class="pins">	
+		<article>
+			<div class="hidden-overflow">
+				<a href="{{ path('app_pins_show', {id: pin.id}) }}">
+					<img src="{{ (pin.imageName ? vich_uploader_asset(pin) : asset('build/images/placeholder-image.png')) | imagine_filter('square_thumbnail_md') }}"  alt="{{ pin.title }}">
+				</a>
+			</div>
+			<h2><a href="{{ path('app_pins_show', {id: pin.id}) }}">{{ pin.title }}</a></h2>
+			<p>{{ pin.description|u.truncate(13, '...', false) }}</p>
+			<p><small>{{ pin.createdAt|ago }}</small></p>
+			
 
-<form id="js-pin-delete-form" action="{{ path('app_pins_delete', {id: pin.id}) }}" method="post" style="display: none;">
-	<input type="hidden" name="csrf_token" value="{{ csrf_token('pin_deletion_ ~ pin.id') }}">
-	<input type="hidden" name="_method" value="DELETE">
-</form>
-<a href="{{ path('app_pins') }}">Retour à la page principale</a>
+			<form id="js-pin-delete-form" action="{{ path('app_pins_delete', {id: pin.id}) }}" method="post" style="display: none;">
+				<input type="hidden" name="csrf_token" value="{{ csrf_token('pin_deletion_ ~ pin.id') }}">
+				<input type="hidden" name="_method" value="DELETE">
+			</form>
+
+		</article>
+		
+	</div>
+
+	<div class="actions">
+		<a href="{{ path('app_pins_edit', {id: pin.id}) }}">Modifier un pin</a> |
+		<a href="#" onclick="event.preventDefault(); confirm('Êtes-vous sûr ?') && document.getElementById('js-pin-delete-form').submit();">Supprimer</a> |
+		<a href="{{ path('app_pins') }}">Retour à la page principale</a>
+
+	</div>
 {% endblock %}

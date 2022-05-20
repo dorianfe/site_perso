@@ -2,11 +2,34 @@
 
 @import 'shared/variables';
 
-@import "~bootstrap";
+* {
+  box-sizing: border-box; 
+}
 
 body {
 	font-family: $primary-font, sans-serif;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: row;
+  margin: 0;
 }
+
+nav {
+  background: #D7E8D4;
+  flex: 1;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  flex: 5;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+}
+
 .alert {
 
   padding: 10px;
@@ -29,17 +52,47 @@ body {
   }
 }
 
+.pins {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: stretch;
+  .pin{
+    flex: 0 0 200px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
+    .text {
+      padding: 0 20px 20px;
+    }
+    img:hover {
+      transform: scale(1.075);
+      transition: transform 0.3s ease-out;
+    }
+    h2 {
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.hidden-overflow {
+  overflow: hidden;
+}
 
 .vich-image {
   .form-check {
-    @extend .mt-3;
+
   }
 
-  img {
-    @extend .mb-2;
-    @extend .rounded;
-    @extend .shadow;
-    @extend .img-thumbnail;
+  .actions {
+
+    a {
+      display: flex;
+      justify-content: center;
+    }
   }
 }
 

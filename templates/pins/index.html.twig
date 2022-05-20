@@ -2,21 +2,33 @@
 
 
 {% block body %}
-{{ include('pins/partials/_title_pins_app.html.twig') }}
-<p>Un pinterest-like</p>
-<h1>{{ pluralize(pins|length, 'Pin') }}</h1>
-
-{% for pin in pins %}
-
-<article>
 	
-	<h2><a href="{{ path('app_pins_show', {id: pin.id}) }}">{{ pin.title }}</a></h2>
-	<p>{{ pin.description|u.truncate(13, '...', false) }}</p>
-	<p>{{ pin.createdAt|ago }}</p>
+	{% if pins|length > 0 %}
 
-</article>
+		<h1>{{ pluralize(pins|length, 'Pin') }}</h1>
 
-{% endfor %}
+		<div class="pins">
 
+			{% for pin in pins %}
+				<article class="pin">
+					<div class="hidden-overflow">
+						<a href="{{ path('app_pins_show', {id: pin.id}) }}">
+							<img src="{{ (pin.imageName ? vich_uploader_asset(pin) : asset('build/images/placeholder-image.png')) | imagine_filter('square_thumbnail_md') }}"  alt="{{ pin.title }}">
+						</a>
+					</div>
+					<div class="text">
+						<h2><a href="{{ path('app_pins_show', {id: pin.id}) }}">{{ pin.title }}</a></h2>
+						<p>{{ pin.description|u.truncate(25, '...', false) }}</p>
+						<p><small>{{ pin.createdAt|ago }}</small></p>
+					</div>
+				</article>
+
+			{% endfor %}
+		</div>
+	{% else %}
+		<p class="mt-5 h1 text-center">Aucun Pin à afficher. <a href="{{ path('app_pins_create') }}">Soyez le premier !</a></p>
+	{% endif %}
+
+	
 {% endblock %}
 
