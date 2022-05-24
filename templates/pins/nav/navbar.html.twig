@@ -1,28 +1,24 @@
 
-<nav>
-	<div>
-		<a class="navbar-brand" href="{{ path('app_pins') }}">Epintérêt</a>
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
+<nav class="nav">
+	<div class="nav__title">
+		<a href="{{ path('app_pins') }}">Epintérêt</a>
+	</div>		
+	<ul class="nav__list">
+		<li class="nav__item">
+			<a href="{{ path('app_pins_create') }}">Nouveau Pin<span class="sr-only"></span></a>
+		</li>
+		<li class="nav__item">
+			<a href="#">Compte</a>
+		</li>
+		<li class="nav__item">
+			<a href="{{ path('app_projets') }}">Projets</a>
+		</li>
+		<li class="nav__item">
+			<a href="{{ path('app_home') }}">Accueil Site</a>
+		</li>
 
-		
-			<ul class="navbar-nav mr-auto">
-				<li class="nav-item active">
-					<a class="nav-link" href="{{ path('app_pins_create') }}">Nouveau Pin<span class="sr-only"></span></a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link disabled" href="#">Compte</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="{{ path('app_projets') }}">Projets</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="{{ path('app_home') }}">Accueil Site</a>
-				</li>
-				
-			</ul>
-		
-	</div>
+	</ul>
+
+	
 	
 </nav>

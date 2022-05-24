@@ -5,7 +5,7 @@
 
 
 	<div class="pins">	
-		<article>
+		<article class="pin">
 			<div class="hidden-overflow">
 				<a href="{{ path('app_pins_show', {id: pin.id}) }}">
 					<img src="{{ (pin.imageName ? vich_uploader_asset(pin) : asset('build/images/placeholder-image.png')) | imagine_filter('square_thumbnail_md') }}"  alt="{{ pin.title }}">
@@ -26,9 +26,10 @@
 	</div>
 
 	<div class="actions">
-		<a href="{{ path('app_pins_edit', {id: pin.id}) }}">Modifier un pin</a> |
-		<a href="#" onclick="event.preventDefault(); confirm('Êtes-vous sûr ?') && document.getElementById('js-pin-delete-form').submit();">Supprimer</a> |
-		<a href="{{ path('app_pins') }}">Retour à la page principale</a>
-
+		<div class="actions__text">
+			<a href="{{ path('app_pins_edit', {id: pin.id}) }}">Modifier un pin</a> |
+			<a href="#" onclick="event.preventDefault(); confirm('Êtes-vous sûr ?') && document.getElementById('js-pin-delete-form').submit();">Supprimer</a> |
+			<a href="{{ path('app_pins') }}">Retour à la page principale</a>
+		</div>
 	</div>
 {% endblock %}

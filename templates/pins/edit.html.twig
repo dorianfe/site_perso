@@ -2,10 +2,9 @@
 
 {% block body %}
 
-	<div class="row">
-		<div class="col-md-6 mx-auto">
-			{{ include('pins/nav/navbar.html.twig') }}
-
+	<div>
+		<div>
+			
 			<h1>Modifier le pin #{{ pin.id }}</h1>
 
 			{{ include('pins/partials/_form.html.twig', {'submitButtonText': 'modifier'})}}

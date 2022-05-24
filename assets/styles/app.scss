@@ -2,32 +2,47 @@
 
 @import 'shared/variables';
 
-* {
-  box-sizing: border-box; 
-}
-
 body {
 	font-family: $primary-font, sans-serif;
-  display: flex;
-  min-height: 100vh;
-  flex-direction: row;
   margin: 0;
+  border: 1px solid #000000;
+  text-align: center;
 }
 
-nav {
-  background: #D7E8D4;
-  flex: 1;
-}
-
-.container {
+.nav {
+  position: sticky;
   display: flex;
-  flex-direction: column;
-  flex: 5;
+  top: 0;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  background: #42A5F5;
+  &__title {
+   margin: 0px 30px;
+   a{
+    text-decoration: none;
+  }
+}
+&__item {
+  display: inline-block;
+  margin: 0px 30px;
+  a {
+    text-decoration: none;
+  }
+}
+
+}
+
+.wrapper {
+  margin: auto;
+  max-width: 115rem;
 }
 
 .content {
   display: flex;
   flex-direction: row;
+  background-color: #BBDEFB;
 }
 
 .alert {
@@ -88,11 +103,13 @@ nav {
   }
 
   .actions {
-
+   display: flex;
+   justify-content: center;
+   &__text {
     a {
-      display: flex;
-      justify-content: center;
+      text-decoration: none;
     }
-  }
+   }
+ }
 }
 

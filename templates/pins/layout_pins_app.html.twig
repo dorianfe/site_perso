@@ -24,19 +24,19 @@
 
     {{ include('pins/nav/navbar.html.twig') }}
     {{ include('pins/partials/_flash_messages.html.twig') }}
-    <div class="container">
-        <header>
-            {{ include('pins/partials/_title_pins_app.html.twig') }}
-            <p>Un pinterest-like</p>
-        </header>
+    
+    <header>
+        {{ include('pins/partials/_title_pins_app.html.twig') }}
+        <p>Un pinterest-like</p>
+    </header>
 
-        <main class="content">
+    <main class="content wrapper">
 
-            {% block body %}{% endblock %}
+        {% block body %}{% endblock %}
 
-            </main>
-            {{ include('pins/partials/_footer.html.twig')}}
-        </div>
+        </main>
+        {{ include('pins/partials/_footer.html.twig')}}
+        
         
     </body>
     </html>
